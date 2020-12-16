@@ -1,5 +1,5 @@
 # Object-detection
-Installing ROS melodic in raspberry pi 4 with ubuntu 18.04 version.
+Install ROS melodic in raspberry pi 4 with ubuntu 18.04 version.
 
 Install all the dependencies of ROS melodic using help of ROS beginner tutorials(http://wiki.ros.org/ROS/Tutorials).
 
