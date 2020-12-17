@@ -10,7 +10,7 @@ https://github.com/ubiquityrobotics/raspicam_node
 
 After running command rosdep update, run this command before catkin_make " rosdep install --from-paths src --ignore-src --rosdistro=melodic -y --skip-keys libraspberrypi0 ".
 
-Some changes we have done here.
+Some changes we have done here:
 
 Download following repository:
 https://github.com/raspberrypi/userland
