@@ -40,14 +40,20 @@ Test our trained model on raspberry pi4:
 
 We have to install some dependancies for raspberry pi 4 and ubuntu 18.04
 sudo apt-get update
+
 $ sudo apt-get upgrade
 
 # install the dependencies (if not already onboard)
 $ sudo apt-get install python3-pip gfortran
+
 $ sudo apt-get install libhdf5-dev libc-ares-dev libeigen3-dev
+
 $ sudo apt-get install libatlas-base-dev libopenblas-dev libblas-dev
+
 $ sudo apt-get install liblapack-dev
+
 $ sudo pip3 install pybind11
+
 $ sudo pip3 install Cython==0.29.21
 
 
