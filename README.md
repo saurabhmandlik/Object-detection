@@ -56,6 +56,26 @@ $ sudo pip3 install pybind11
 
 $ sudo pip3 install Cython==0.29.21
 
+$ sudo pip3 install h5py
+
+$ sudo pip3 install --upgrade setuptools
+
+# install gdown to download from Google drive
+
+$ pip3 install gdown
+
+# copy binairy
+
+$ sudo cp /home/ubuntu/.local/bin/gdown /usr/local/bin/gdown
+
+# download the wheel
+
+$ gdown https://drive.google.com/uc?id=1X2mhbsG1p_RK_rKJrLCwh3cEA0Kwv6Zr
+
+# install TensorFlow 
+
+$ sudo -H pip3 install tensorflow-2.4.0-cp36-cp36m-linux_aarch64.whl
+
 
 
 
