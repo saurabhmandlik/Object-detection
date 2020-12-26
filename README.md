@@ -76,7 +76,9 @@ $ gdown https://drive.google.com/uc?id=1X2mhbsG1p_RK_rKJrLCwh3cEA0Kwv6Zr
 
 $ sudo -H pip3 install tensorflow-2.4.0-cp36-cp36m-linux_aarch64.whl
 
+# Install OpenCV (if it is not present in the system)
 
+sudo pip3 install opencv-python
 
 
 
