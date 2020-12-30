@@ -112,10 +112,26 @@ Create an folder with the name of images in the object detection directory of te
 Let's do some fun! Now you have to label all the images that you have in the image folder. For that, Labelimg is the best tool to fulfill our task. 
 You can see the information about it and also download it through below links:
 
-https://github.com/tzutalin/labelImg
+    https://github.com/tzutalin/labelImg
 
-https://www.dropbox.com/s/tq7zfrcwl44vxan/windows_v1.6.0.zip?dl=1
+    https://www.dropbox.com/s/tq7zfrcwl44vxan/windows_v1.6.0.zip?dl=1
     
+ 
+Download and install LabelImg, point it to your \images\train directory, and then draw a box around each object in each image. Repeat the process for all the images in the \images\test directory. This will take time as per your gathered images. 
+
+LabelImg saves a .xml file containing the label data for each image. These .xml files will be used to generate TFRecords, which are one of the inputs to the TensorFlow trainer. Once you have labeled and saved each image, there will be one .xml file for each image in the \test and \train directories.
+
+### Generate training data
+
+It's time to generate tfrecords that serve as input data to the TensorFlow training model. For this, first you have to convert .xml to .csv all the data of train and test images. Then, download the xml_to_csv.py and generate_tfrecord.py from https://github.com/datitran/raccoon_dataset.
+
+Now the xml data will used to create csv data using following command:
+
+    (tensorflow) C:\tensorflow\models\research\object_detection> python xml_to_csv.py
+    
+This creates a train_labels.csv and test_labels.csv file in the \object_detection\images folder.
+
+Now, the second part is to edit the tfrecord.py file
     
     
     
