@@ -50,7 +50,7 @@ Note: Every time the "tensorflow" virtual environment is exited, the PYTHONPATH 
 
 In the Anaconda Command Prompt, change directories to the \models\research directory:
 
-(tensorflow) C:\> cd C:\tensorflow1\models\research
+(tensorflow) C:\> cd C:\tensorflow\models\research
 
 Paste the following command in this directory:
 
@@ -58,6 +58,13 @@ protoc --python_out=. .\object_detection\protos\anchor_generator.proto .\object_
 
 This will creates a name_pb2.py file from every name.proto file in the \object_detection\protos folder. You can check it if it's created or not.
 
+Then, run the following command:
 
+(tensorflow) C:\tensorflow\models\research> python setup.py build
+
+(tensorflow) C:\tensorflow\models\research> python setup.py install
+
+
+## Gather and label images
 
 
