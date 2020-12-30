@@ -67,4 +67,4 @@ Then, run the following command:
 
 ## Gather and label images
 
-
+We need to provide the images it will use to train a new detection classifier.
