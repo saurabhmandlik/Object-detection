@@ -196,6 +196,8 @@ Here, I have used "ssd_mobilenet_v1_pets.config" file. You can find this file in
     
     label_map_path: "C:/tensorflow/models/research/object_detection/training/labelmap.pbtxt"
     
+    -line 130. Change num_examples to the number of images you have in the \images\test directory.
+    
     -line 188 and 190. In the test_input_reader section, change input_path and label_map_path to:
     
     input_path: "C:/tensorflow/models/research/object_detection/test.record
@@ -204,7 +206,19 @@ Here, I have used "ssd_mobilenet_v1_pets.config" file. You can find this file in
     
 Save the file after the changes have been made. That’s it! The training job is all configured and ready to go!
     
+
+## Run Training model
+
+To train the model we will use the train.py file, which is located in the object_detection/legacy folder. We will copy it into the object_detection folder and from the \object_detection directory, issue the following command to begin training:
+
+    python3 train.py --logtostderr --train_dir=training/ --pipeline_config_path=training/ssd_mobilenet_v1_pets.config
     
+Training will start shortly. The initialization can take up to 30 seconds before the actual training begins.
+
+
+
+
+
 
 
 
