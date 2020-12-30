@@ -21,21 +21,13 @@ Note: You can also use tensorflow-gpu version then just use "tensorflow-gpu" ins
 Install the all dependencies
 
     (tensorflow) C:\> conda install -c anaconda protobuf
-
     (tensorflow) C:\> pip install pillow
-
-    (tensorflow) C:\> pip install lxml
-
+    tensorflow) C:\> pip install lxml   
     (tensorflow) C:\> pip install Cython
-
     (tensorflow) C:\> pip install contextlib2
-
     (tensorflow) C:\> pip install jupyter
-
     (tensorflow) C:\> pip install matplotlib
-
     (tensorflow) C:\> pip install pandas
-
     (tensorflow) C:\> pip install opencv-python
 
 Configure PYTHONPATH environment variable
@@ -61,7 +53,6 @@ This will creates a name_pb2.py file from every name.proto file in the \object_d
 Then, run the following command:
 
     (tensorflow) C:\tensorflow\models\research> python setup.py build
-
     (tensorflow) C:\tensorflow\models\research> python setup.py install
 
 
@@ -77,31 +68,19 @@ You can use the following python script to reduce the size of the images.
 
 
     from PIL import Image
-
     import os
-
     import argparse
-
+    
     def rescale_images(directory, size):
-    
-        for img in os.listdir(directory):
-        
-            im = Image.open(directory+img)
-            
-            im_resized = im.resize(size, Image.ANTIALIAS)
-            
-            im_resized.save(directory+img)
-            
+        for img in os.listdir(directory):       
+            im = Image.open(directory+img)         
+            im_resized = im.resize(size, Image.ANTIALIAS)            
+            im_resized.save(directory+img)          
     if __name__ == '__main__':
-    
-        parser = argparse.ArgumentParser(description="Rescale images")
-        
-        parser.add_argument('-d', '--directory', type=str, required=True, help='Directory containing the images')
-        
-        parser.add_argument('-s', '--size', type=int, nargs=2, required=True, metavar=('width', 'height'), help='Image size')
-        
-        args = parser.parse_args()
-        
+        parser = argparse.ArgumentParser(description="Rescale images")      
+        parser.add_argument('-d', '--directory', type=str, required=True, help='Directory containing the images')      
+        parser.add_argument('-s', '--size', type=int, nargs=2, required=True, metavar=('width', 'height'), help='Image size')       
+        args = parser.parse_args()     
         rescale_images(args.directory, args.size)
     
     
@@ -159,10 +138,79 @@ For example, say you are training a classifier to detect basketballs, shirts, an
             else:
                 None      
      
+ Just replace the row_label with your own label.
+ 
+ Then, generate the TFRecord files by issuing these commands
+ 
+    python generate_tfrecord.py --csv_input=images\train_labels.csv --image_dir=images\train --output_path=train.record
+    python generate_tfrecord.py --csv_input=images\test_labels.csv --image_dir=images\test --output_path=test.record
+    
+These generate a train.record and a test.record file in \object_detection. These will be used to train the new object detection classifier.
+
+## Create label map and configuring training
+
+The last thing to do before training is to create a label map and edit the training configuration file.
+
+### Label map
+
+The label map tells the trainer what each object is by defining a mapping of class names to class ID numbers. Use a text editor to create a new file and save it as labelmap.pbtxt in the C:\tensorflow1\models\research\object_detection\training folder.
+
+The label map should be:
+
+        item {
+      id: 1
+      name: 'raspberry pi'
+    }
+
+    item {
+      id: 2
+      name: 'msp'
+    }
+
+    item {
+      id: 3
+      name: 'barcode'
+    }
+
+    item {
+      id: 4
+      name: 'mix'
+
+The label map ID numbers should be the same as what is defined in the generate_tfrecord.py file.
+
+### Configure training
+
+Finally, the object detection training pipeline must be configured. It defines which model and what parameters will be used for training. 
+
+Here, I have used "ssd_mobilenet_v1_pets.config" file. You can find this file in C:\tensorflow\models\research\object_detection\samples\configs folder. Copy fro config folder and paste it into training directory. Then, open the file with a text editor. There are several changes to make to the .config file, mainly changing the number of classes and examples, and adding the file paths to the training data.
+
+    -line 9, Change num_classes to the number of different objects you want the classifier to detect. For this e.g. the number would be 4.
+    
+    -line 156, Change fine_tune_checkpoint to:
+    
+    C:/tensorflow/models/research/object_detection/ssd_mobilenet_v1_coco_2018_01_28/model.ckpt"
+    
+    -line 176 and 178. In the train_input_reader section, change input_path and label_map_path to:
+    
+    input_path: "C:/tensorflow/models/research/object_detection/train.record
+    
+    label_map_path: "C:/tensorflow/models/research/object_detection/training/labelmap.pbtxt"
+    
+    -line 188 and 190. In the test_input_reader section, change input_path and label_map_path to:
+    
+    input_path: "C:/tensorflow/models/research/object_detection/test.record
+    
+    label_map_path: "C:/tensorflow/models/research/object_detection/training/labelmap.pbtxt"
+    
+Save the file after the changes have been made. That’s it! The training job is all configured and ready to go!
     
     
-    
-    
+
+
+
+
+
+
     
     
     
