@@ -6,7 +6,7 @@ https://github.com/tensorflow/models
 
 First you have to create a new tensorflow environment using following command:
 
-C:\> conda create -n tensorflow pip python=3.7
+#### C:\> conda create -n tensorflow pip python=3.7
 
 then, activate the tensorflow environment by issuing:
 
