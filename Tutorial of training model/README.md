@@ -68,3 +68,74 @@ Then, run the following command:
 ## Gather and label images
 
 We need to provide the images it will use to train a new detection classifier.
+
+### 1) Gather Images
+
+Make sure the images aren’t too large. They should be less than 200KB each, and their resolution shouldn’t be more than 720x1280. The larger the images are, the longer it will take to train the classifier. 
+
+You can use the following python script to reduce the size of the images.
+
+from PIL import Image
+import os
+import argparse
+    def rescale_images(directory, size):
+        for img in os.listdir(directory):
+            im = Image.open(directory+img)
+            im_resized = im.resize(size, Image.ANTIALIAS)
+            im_resized.save(directory+img)
+    if __name__ == '__main__':
+        parser = argparse.ArgumentParser(description="Rescale images")
+        parser.add_argument('-d', '--directory', type=str, required=True, help='Directory containing the images')
+        parser.add_argument('-s', '--size', type=int, nargs=2, required=True, metavar=('width', 'height'), help='Image size')
+        args = parser.parse_args()
+        rescale_images(args.directory, args.size)
+    
+    
+Create an folder with the name of images in the object detection directory of tensorflow/models. In that image folder, create another two folders as a test image and train image. Move 20% of the images into test directory and 80% of the images into train directory. Make sure there are a variety of pictures in both the \test and \train directories.
+
+### 2)Label Images
+
+Let's do some fun! Now you have to label all the images that you have in the image folder. For that, Labelimg is the best tool to fulfill our task. 
+You can see the information about it and also download it through below links:
+
+https://github.com/tzutalin/labelImg
+
+https://www.dropbox.com/s/tq7zfrcwl44vxan/windows_v1.6.0.zip?dl=1
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
