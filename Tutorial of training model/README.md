@@ -131,7 +131,34 @@ Now the xml data will used to create csv data using following command:
     
 This creates a train_labels.csv and test_labels.csv file in the \object_detection\images folder.
 
-Now, the second part is to edit the tfrecord.py file
+Now, the second part is to edit the generate_tfrecord.py file. Replace the label map starting with your own label map, where each object is assigned an ID number.
+
+For example, say you are training a classifier to detect basketballs, shirts, and shoes. You will replace the following code in generate_tfrecord.py:
+
+  #### TO-DO replace this with label map
+  
+    def class_text_to_int(row_label):
+        if row_label == 'raspberry pi':
+            return 1
+        elif row_label == 'msp':
+            return 2
+        elif row_label == 'barcode':
+            return 3
+        elif row_label == 'mix':
+            return 3
+   
+  #### with this
+  
+        def class_text_to_int(row_label):
+            if row_label == 'basketball':
+                return 1
+            elif row_label == 'shirt':
+                return 2
+            elif row_label == 'shoe':
+                return 3
+            else:
+                None      
+     
     
     
     
