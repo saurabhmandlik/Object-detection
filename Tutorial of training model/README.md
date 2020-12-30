@@ -75,11 +75,12 @@ Make sure the images aren’t too large. They should be less than 200KB each, an
 
 You can use the following python script to reduce the size of the images.
 
-from PIL import Image
 
-import os
+    from PIL import Image
 
-import argparse
+    import os
+
+    import argparse
 
     def rescale_images(directory, size):
     
