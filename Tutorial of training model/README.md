@@ -243,8 +243,23 @@ You have to generate frozen inference graph file (.pb file) after completing the
   
 ## Test the trained model
   
-Now, our model is perfectly trained. Let's test it using python script that are in this repository, object
-  
+Now, our model is perfectly trained. Let's test it using python script that are available in this repository, object1.py. 
+
+Before running the scipts, you have to make some changes according to your model.
+
+    MODEL_NAME = 'inference_graph'
+
+    PATH_TO_CKPT = os.path.join(CWD_PATH,MODEL_NAME,'frozen_inference_graph.pb')
+
+    PATH_TO_LABELS = os.path.join(CWD_PATH,'training','labelmap.pbtxt')
+
+    NUM_CLASSES = 4
+
+    PATH_TO_CKPT = "C:/Users/SAURABH/Desktop/Project/models/research/object_detection/inference_graph/frozen_inference_graph.pb"
+    PATH_TO_LABELS = "C:/Users/SAURABH/Desktop/Project/models/research/object_detection/training/labelmap.pbtxt"
+
+
+Do the changes in above lines as per your model. Here, I have run this script in Jupyter Notebook. Compile all the functions one by one. After everything is fine, it will tke 5-10 seconds to open the camera showing detecting objects!
   
   
 
