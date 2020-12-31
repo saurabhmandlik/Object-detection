@@ -213,7 +213,40 @@ To train the model we will use the train.py file, which is located in the object
 
     python3 train.py --logtostderr --train_dir=training/ --pipeline_config_path=training/ssd_mobilenet_v1_pets.config
     
-Training will start shortly. The initialization can take up to 30 seconds before the actual training begins. You can see the wind
+Training will start shortly. The initialization can take up to 30 seconds before the actual training begins.
+
+Each step of training reports the loss. It will start high and get lower and lower as training progresses. For my training on the ssd-mobilenet-v1-coco, it started at about 20.0 and then slowly it dropped around 13-14. I trained the model until the loss consistently drop below 2. For this purpose, it will take about 20000 steps or about 7-8 hrs (depending on how powerful your CPU or GPU are). The losses will be different for different model. 
+
+Parellely you can also see the progress of training model. Just open the new terminal of anaonda prompt and use this command in object_detection directory:
+
+    (tensorflow) C:\tensorflow\models\research\object_detection>tensorboard --logdir=training
+    
+The training routine periodically saves checkpoints about every five minutes. You can terminate the training by pressing Ctrl+C while in the command prompt window.
+
+## Export inference graph
+
+I typically wait until just after a checkpoint has been saved to terminate the training. You can terminate training and start it later, and it will restart from the last saved checkpoint. The checkpoint at the highest number of steps will be used to generate the frozen inference graph.
+
+You have to generate frozen inference graph file (.pb file) after completing the training. To run this, you just need to pass in your checkpoint and your pipeline config, then wherever you want the inference graph to be placed. From the \object_detection folder, issue the following command:
+
+    python3 export_inference_graph.py \
+    --input_type image_tensor \
+    --pipeline_config_path training/ssd_mobilenet_v1_pets.config \
+    --trained_checkpoint_prefix training/model.ckpt-XXXX \
+    --output_directory inference_graph
+ 
+  where “XXXX” in “model.ckpt-XXXX” should be replaced with the highest-numbered .ckpt file in the training folder.
+    
+  This creates a frozen_inference_graph.pb file in the \object_detection\inference_graph folder. The .pb file contains the object detection classifier.
+  
+  
+  
+## Test the trained model
+  
+
+  
+  
+  
 
 
 
