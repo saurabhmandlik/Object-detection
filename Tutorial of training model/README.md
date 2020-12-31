@@ -243,7 +243,7 @@ You have to generate frozen inference graph file (.pb file) after completing the
   
 ## Test the trained model
   
-
+Now, our model is perfectly trained. Let's test it using python script that are in this repository, object
   
   
   
