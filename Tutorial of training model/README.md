@@ -213,9 +213,7 @@ To train the model we will use the train.py file, which is located in the object
 
     python3 train.py --logtostderr --train_dir=training/ --pipeline_config_path=training/ssd_mobilenet_v1_pets.config
     
-Training will start shortly. The initialization can take up to 30 seconds before the actual training begins.
-
-
+Training will start shortly. The initialization can take up to 30 seconds before the actual training begins. You can see the wind
 
 
 
