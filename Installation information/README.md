@@ -1,13 +1,14 @@
 ### Installation guide for ubuntu OS and ROS:
 
-Install ROS melodic in raspberry pi 4 with ubuntu 18.04 version.
+Here, I have installed ROS melodic in raspberry pi 4 with ubuntu 18.04 version.
 
 Install all the dependencies of ROS melodic using help of ROS beginner tutorials(http://wiki.ros.org/ROS/Tutorials).
 
 After understanding basics of ROS we have to install raspicam node in ROS to read camera image as an ROS topic.
 
 Here is the link where we can install raspicam node:
-https://github.com/ubiquityrobotics/raspicam_node
+
+  https://github.com/ubiquityrobotics/raspicam_node
 
 After running command rosdep update, run this command before catkin_make " rosdep install --from-paths src --ignore-src --rosdistro=melodic -y --skip-keys libraspberrypi0 ".
 
