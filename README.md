@@ -1,12 +1,4 @@
 
-
-
-
-Camera Calibration:
-
-
-
-
 Aruco marker detection:
 
 This node finds aruco markers in images stream and publishes their vertices (corner points) and estimates 3D transforms from the camera to the fiducials.
