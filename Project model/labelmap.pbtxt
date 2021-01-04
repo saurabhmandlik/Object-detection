@@ -1,0 +1,24 @@
+item {
+  id: 1
+  name: 'barcode'
+}
+
+item {
+  id: 2
+  name: 'raspberry_pi'
+}
+
+item {
+  id: 3
+  name: 'msp'
+}
+
+item {
+  id: 4
+  name: 'stm'
+}
+
+item {
+  id: 5
+  name: 'mix'
+}
