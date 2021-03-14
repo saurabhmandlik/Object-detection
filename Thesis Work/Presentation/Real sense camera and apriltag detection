@@ -1,5 +1,15 @@
-
-## Installing realsense camera on raspberry pi:
+Installing realsense camera on raspberry pi:
 
 https://github.com/IntelRealSense/librealsense/blob/master/doc/installation_raspbian.md
+
+
+
+Install Apriltag detection:
+
+Clone below repo on pi:
+https://github.com/AprilRobotics/apriltag_ros
+
+Run following command:
+sudo apt-get install ros-melodic-apriltag*
+
 
