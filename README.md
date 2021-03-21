@@ -8,3 +8,7 @@
 -Understanding of vision_to_mavros code.
 
 -tf tutorials
+
+
+
+### Added manual of Strompi in thesis work folder
