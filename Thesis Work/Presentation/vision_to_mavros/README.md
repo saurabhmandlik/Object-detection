@@ -1,1 +1,1 @@
-
+A collection of ROS and non-ROS (Python, cpp) code that converts data from vision-based system (external localization system like fiducial tags, VIO, SLAM, or depth image) to corresponding MAVROS topics or MAVLink messages that can be consumed by a flight control stack to support precise localization and navigation tasks.
