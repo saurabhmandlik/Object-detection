@@ -20,6 +20,6 @@ https://ardupilot.org/copter/docs/configuring-hardware.html
 2. Radio control calibration                  (https://ardupilot.org/copter/docs/common-radio-control-calibration.html)
 3. Accelerometer calibration                  (https://ardupilot.org/copter/docs/common-accelerometer-calibration.html)
 4. Compass calibration                        (https://ardupilot.org/copter/docs/common-compass-calibration-in-mission-planner.html)
-5. Manually do the ESC calibration            (https://ardupilot.org/copter/docs/esc-calibration.html_
+5. Manually do the ESC calibration            (https://ardupilot.org/copter/docs/esc-calibration.html)
 
 
