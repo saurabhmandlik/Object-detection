@@ -1,0 +1,39 @@
+Mavlink:
+ls /dev
+python3 mavproxy.py --master=/dev/ttyACM2 --baudrate 57600 --aircraft Mycopter
+
+MAVROS:
+roscore
+roslaunch mavros px4.launch fcu_url://:14855@
+
+
+
+
+
+roslaunch apriltag_ros rs_continuous_detection.launch - for real sense
+roslaunch vision_to_mavros tf_to_mavros_rs.launch - for vision_to_mavros
+rosrun tf2_tools view_frames.py 
+
+rostopic echo /mavros/vision_pose/pose
+
+
+nano continuous_detection.launch 
+nano settings.yaml 
+nano tags.yaml
+
+
+
+#to run the strompi window
+sudo minicom -D /dev/ttyS0 -b 38400
+sspc
+
+
+#to run the simple shape detection code
+roscore
+rosrun detection basic.py
+roslaunch raspicam_node camerav2_1280x960_10fps.launch enable_raw:=true
+
+
+#kill roscore and rosmaster
+killall -9 roscore
+killall -9 rosmaster
