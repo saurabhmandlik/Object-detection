@@ -1,0 +1,11 @@
+item {
+  id: 1
+  name: 'shape'
+}
+
+item {
+  id: 2
+  name: 'box'
+}
+
+
