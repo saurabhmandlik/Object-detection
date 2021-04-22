@@ -12,7 +12,7 @@
 
 Save this folder in /object_detection directory of tensorflow except labelmap.pbtxt file. Copy this .pbtxt file and paste it in /object_detection/data folder.
 
-And finally run the command of .py script in cd /tensorflow/models/research/object_detection directory.
+And finally run your object detection script in cd /tensorflow/models/research/object_detection directory.
 
 
 #### How to check when the training is finished or when do we stop to train the model?
@@ -25,3 +25,8 @@ You can see the progress of training model below.
 
 
 ![image](https://user-images.githubusercontent.com/67440191/115701485-205faf00-a368-11eb-8ba8-26c2c0063db6.png)
+
+
+
+
+
