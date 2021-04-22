@@ -13,3 +13,10 @@
 Save this folder in /object_detection directory of tensorflow except labelmap.pbtxt file. Copy this .pbtxt file and paste it in /object_detection/data folder.
 
 And finally run the command of .py script in cd /tensorflow/models/research/object_detection directory.
+
+
+#### How to check when the training is finished or when do we stop to train the model?
+
+As I have used SSD neural network to train our model, because it allows the faster detection of object with good accuracy. 
+
+SSD 
