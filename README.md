@@ -22,3 +22,4 @@ As I have used SSD object detection model to train our model, because it allows 
 While training the model, you can see that the loss is started about 15-20 and quickly dropped around 7-9.  Each step of training reports the loss. For SSD model, we have to train our model until loss is consistently below 2. For getting consistently loss 2 will take 21000 steps or about 4-5 hrs. 
 
 
+![image](https://user-images.githubusercontent.com/67440191/115701485-205faf00-a368-11eb-8ba8-26c2c0063db6.png)
