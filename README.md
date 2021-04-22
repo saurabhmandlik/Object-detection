@@ -17,6 +17,8 @@ And finally run the command of .py script in cd /tensorflow/models/research/obje
 
 #### How to check when the training is finished or when do we stop to train the model?
 
-As I have used SSD neural network to train our model, because it allows the faster detection of object with good accuracy. 
+As I have used SSD object detection model to train our model, because it allows the faster detection of object with good accuracy. 
 
-SSD 
+While training the model, you can see that the loss is started about 15-20 and quickly dropped around 7-9.  Each step of training reports the loss. For SSD model, we have to train our model until loss is consistently below 2. For getting consistently loss 2 will take 21000 steps or about 4-5 hrs. 
+
+
