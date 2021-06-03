@@ -29,6 +29,29 @@ This repository explains the autonomous navigation and position of drone in indo
 ##### The repository is divided into two parts:
     1. Detect the predetermined object using computer vision approach
     2. Autonomously navigate UAV using marker
+    
+
+#### 2. Autonomously Navigate the UAV using AprilTag marker:
+
+Few things we have to understand to get into this topic.
+
+#### A. MAVROS (http://wiki.ros.org/mavros)
+MAVROS is a ROS package that enables MAVLink extendable communication between computers runnig ROS for any ground station. It's officially bridge between ROS and ArduPilot by translating ROS topics into MAVLink messages.
+
+####### Features 
+
+##### MAVROS Installation
+
+
+
+
+
+
+
+
+
+
+
 
 
     . 
