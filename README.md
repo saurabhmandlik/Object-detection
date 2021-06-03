@@ -24,6 +24,8 @@ This repository explains the autonomous navigation and position of drone in indo
     4. UAV
     5. PixHawk 4
     6. RC transmitter
+    7. 4500 mAh LiPo Battery
+    8. StromPi and Battery module
     
 
 #### The repository is divided into two parts:
@@ -80,7 +82,10 @@ For this project, I have used Pixhawk 4 FCU.
 
 
 
-#### Hardware setup
+### Hardware Setup
+Connect Pixhawk FCU to LiPo battery. Then connect FCU to on board computer raspberry pi through USB Port of FCU. Connect realsense camera to raspberry pi 4.
+
+
 
 
 
