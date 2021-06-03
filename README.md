@@ -25,6 +25,12 @@ This repository explains the autonomous navigation and position of drone in indo
     5. PixHawk 4
     6. RC transmitter
     
+
+##### The repository is divided into two parts:
+    1. Detect the predetermined object using computer vision approach
+    2. Autonomously navigate UAV using marker
+
+
     . 
 
 
