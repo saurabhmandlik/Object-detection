@@ -1,5 +1,5 @@
 
-## Indoor non-GPS Autonomous Navigation of UAV using AprilTag Marker 
+# Indoor non-GPS Autonomous Navigation of UAV using AprilTag Marker 
 
 This repository explains the autonomous navigation and position of drone in indoor environment. Here, I have used Intel RealSense camera to navigate the UAV using AprilTag marker. 
 
@@ -26,16 +26,16 @@ This repository explains the autonomous navigation and position of drone in indo
     6. RC transmitter
     
 
-##### The repository is divided into two parts:
+#### The repository is divided into two parts:
     1. Detect the predetermined object using computer vision approach
     2. Autonomously navigate UAV using marker
     
 
-#### 2. Autonomously Navigate the UAV using AprilTag marker:
+### 2. Autonomously Navigate the UAV using AprilTag marker:
 
 Few things we have to understand to get into this topic.
 
-#### A. MAVROS (http://wiki.ros.org/mavros)
+#### A. MAVROS  (http://wiki.ros.org/mavros)
 MAVROS is a ROS package that enables MAVLink extendable communication between computers runnig ROS for any ground station. It's officially bridge between ROS and ArduPilot by translating ROS topics into MAVLink messages.
 
 ###### Features of MAVROS
@@ -50,6 +50,26 @@ MAVROS is a ROS package that enables MAVLink extendable communication between co
 
 ##### MAVROS Installation
 
+    sudo apt-get install python-catkin-tools python-rosinstall-generator -y
+     
+    mkdir -p ~/catkin_ws/src
+    cd ~/catkin_ws
+    catkin init
+    wstool init src
+
+
+    rosinstall_generator --rosdistro melodic mavlink | tee /tmp/mavros.rosinstall
+
+    rosinstall_generator --upstream mavros | tee -a /tmp/mavros.rosinstall
+
+    wstool merge -t src /tmp/mavros.rosinstall
+    wstool update -t src -j4
+    rosdep install --from-paths src --ignore-src -y
+
+    ./src/mavros/mavros/scripts/install_geographiclib_datasets.sh
+    
+    catkin build
+    source devel/setup.bash
 
 
 
