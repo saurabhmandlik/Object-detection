@@ -38,7 +38,7 @@ Few things we have to understand to get into this topic.
 #### A. MAVROS  (http://wiki.ros.org/mavros)
 MAVROS is a ROS package that enables MAVLink extendable communication between computers runnig ROS for any ground station. It's officially bridge between ROS and ArduPilot by translating ROS topics into MAVLink messages.
 
-###### Features of MAVROS
+##### Features of MAVROS
 
     -Communication with autopilot via serial port, UDP or TCP (e.g. PX4 Pro or ArduPilot)
     -Plugin system for ROS-MAVLink translation
@@ -70,21 +70,5 @@ MAVROS is a ROS package that enables MAVLink extendable communication between co
     
     catkin build
     source devel/setup.bash
-
-
-
-
-
-
-
-
-
-
-
-
-    . 
-
-
-
 
 
