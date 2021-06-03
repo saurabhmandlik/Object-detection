@@ -5,5 +5,12 @@ This repository explains the autonomous navigation and position of drone in indo
 
 ### Required Set-up
 
+#### Software and Versions to br needed
+
+    1. ROS-Melodic 18.04
+    . 
+
+
+
 
 
