@@ -70,5 +70,13 @@ MAVROS is a ROS package that enables MAVLink extendable communication between co
     
     catkin build
     source devel/setup.bash
+    
+#### Pixhawk FCU
+Pixhawk is a flight controller unit that is used for many applications of multicopters, rovers etc.  It offers a wide variety of flight modes from fully manual to fully autonomous. As part of the wider ArduPilot software platform it works seamlessly with a variety of Ground Control Station programs that are used to setup the vehicle, monitor the vehicle’s flight in real-time and perform powerful mission planning activities.
+
+
+
+#### Hardware setup
+
 
 
