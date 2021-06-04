@@ -37,7 +37,7 @@ This repository explains the autonomous navigation and position of drone in indo
 
 Few things we have to understand to get into this topic.
 
-#### A. MAVROS  (http://wiki.ros.org/mavros)
+#### MAVROS  (http://wiki.ros.org/mavros)
 MAVROS is a ROS package that enables MAVLink extendable communication between computers runnig ROS for any ground station. It's officially bridge between ROS and ArduPilot by translating ROS topics into MAVLink messages.
 
 ##### Features of MAVROS
@@ -81,11 +81,34 @@ For this project, I have used Pixhawk 4 FCU.
 
 
 
+## Overall Setup to Fly the UAV
 
 ### Hardware Setup
-Connect Pixhawk FCU to LiPo battery. 
-connect FCU to on board computer raspberry pi through USB Port of FCU. 
-Connect realsense camera to raspberry pi 4.
+    Connect Pixhawk FCU to LiPo battery. 
+    connect FCU to on board computer raspberry pi through USB Port of FCU. 
+    Connect realsense camera to raspberry pi 4.
+    Connect telemetry radio cable to PC. (Baud rate=57600)
+    
+    
+ Before doing this, check the following parameters in Mission Planner Software:
+ 
+    AHRS_EKF_TYPE = 2
+    BRD_RTC_TYPES = 2
+    EK2_ENABLE = 1
+    EK3_ENABLE = 0
+    EK2_GPS_TYPE = 3
+    EK2_POSNE_M_NSE = 0.1
+    EK2_VELD_M_NSE = 0.1
+    EK2_VELNE_M_NSE = 0.1
+    GPS_TYPE = 0
+    COMPASS_USE = 0
+    COMPASS_USE2 = 0
+    COMPASS_USE3 = 0
+    SERIAL5_BAUD = 921 (the serial port used to connect to Raspberry Pi)
+    SERIAL5_PROTOCOL = 1
+    SYSID_MYGCS = 1 (to accept control from mavros)
+    VISO_TYPE = 0
+    
 
 
 
