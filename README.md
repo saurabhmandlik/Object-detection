@@ -83,7 +83,9 @@ For this project, I have used Pixhawk 4 FCU.
 
 
 ### Hardware Setup
-Connect Pixhawk FCU to LiPo battery. Then connect FCU to on board computer raspberry pi through USB Port of FCU. Connect realsense camera to raspberry pi 4.
+Connect Pixhawk FCU to LiPo battery. 
+connect FCU to on board computer raspberry pi through USB Port of FCU. 
+Connect realsense camera to raspberry pi 4.
 
 
 
