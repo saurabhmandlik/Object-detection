@@ -11,7 +11,7 @@ This repository explains the autonomous navigation and position of drone in indo
     2. ROS Melodic
     3. Mission Planner
     4. RViz
-    5. vision_to_mavros ROS packages
+    5. vision_to_mavros ROS packages and AprilTag marker
     6. TensorFlow 
     7. Python 2.7
     
@@ -109,5 +109,19 @@ Before doing this, check the following parameters in Mission Planner Software: (
     SYSID_MYGCS = 1 (to accept control from mavros)
     VISO_TYPE = 0
 
+
+
+### Steps to do on Linux Platform
+
+We have to run three main nodes on 3 seperated terminal of RPi.
+
+    1. RealSense camera node:
+    - roslaunch rs_continous.launch
+    
+    2. MAVROS node
+    - roslaunch px4.launch fcu_url:ttyACM0:57600
+    
+    3. vision_to_mavros node:
+    - roslaunch vision_to_mavros tf_to_mavros_rs.launch
 
 
