@@ -90,7 +90,7 @@ For this project, I have used Pixhawk 4 FCU.
     Connect telemetry radio cable to PC. (Baud rate=57600)
     
     
- Before doing this, check the following parameters in Mission Planner Software:
+Before doing this, check the following parameters in Mission Planner Software: (Information regarding mission planner software and mandatory hardware configuration steps can available in Thesis Work -> Mission Planner directory)
  
     AHRS_EKF_TYPE = 2
     BRD_RTC_TYPES = 2
@@ -108,9 +108,6 @@ For this project, I have used Pixhawk 4 FCU.
     SERIAL5_PROTOCOL = 1
     SYSID_MYGCS = 1 (to accept control from mavros)
     VISO_TYPE = 0
-    
-
-
 
 
 
