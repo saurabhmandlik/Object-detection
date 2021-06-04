@@ -110,10 +110,13 @@ Before doing this, check the following parameters in Mission Planner Software: (
     VISO_TYPE = 0
 
 
+## Ground test
+
+Go to misssion planner software and click on the connect button (upper right part of the window) with having baudrate 57600.
 
 ### Steps to do on Linux Platform
 
-We have to run three main nodes on 3 seperated terminal of RPi.
+We have to run three main nodes at the same time on 3 seperated terminal of RPi.
 
     1. RealSense camera node:
     - roslaunch rs_continous.launch
@@ -124,4 +127,6 @@ We have to run three main nodes on 3 seperated terminal of RPi.
     3. vision_to_mavros node:
     - roslaunch vision_to_mavros tf_to_mavros_rs.launch
 
+on another terminal of RPi, run command /mavros/vision_pose/pose. This is the ros topic which gives the pose data from the vehicles.
 
+and also run the "mavros echo /tf" to see the camera pose in Apriltag frame with Z-axis  
