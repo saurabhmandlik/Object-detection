@@ -140,5 +140,5 @@ After running the all the nodes (realsense camera node, mavros node, vision_to_m
 
 I already mentioned above how to connect FCU to MP. After connecting to MP, You can see the pop-up screen on MP window that shows getting parameters. 
 
-Then 
+Then you have to set the EKF home position. It's shows the vehicle position in the world. For that, I have a script set_origin.py where I have set SET_GPS_GLOBAL_origin and SET_HOME_POSITION MAVLink messages. Run this scropt on terminal by command "rosrun vision_to_mavros set_origin.py". Script available in visio_to_mavros -> scripts directory. 
 
