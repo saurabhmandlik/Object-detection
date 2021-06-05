@@ -127,6 +127,6 @@ We have to run three main nodes at the same time on 3 seperated terminal of RPi.
     3. vision_to_mavros node:
     - roslaunch vision_to_mavros tf_to_mavros_rs.launch
 
-on another terminal of RPi, run command /mavros/vision_pose/pose. This is the ros topic which gives the pose data from the vehicles.
+on another terminal of RPi, run command "mavros echo /mavros/vision_pose/pose" to see the pose data from the vehicles (UAV).
 
-and also run the "mavros echo /tf" to see the camera pose in Apriltag frame with Z-axis  
+and also run the "mavros echo /tf" to see the camera pose in Apriltag frame with Z-axis pointing downwards.   
