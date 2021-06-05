@@ -142,3 +142,6 @@ I already mentioned above how to connect FCU to MP. After connecting to MP, You 
 
 Then you have to set the EKF home position. It's shows the vehicle position in the world. For that, I have a script set_origin.py where I have set SET_GPS_GLOBAL_origin and SET_HOME_POSITION MAVLink messages. Run this scropt on terminal by command "rosrun vision_to_mavros set_origin.py". Script available in visio_to_mavros -> scripts directory. 
 
+After running the script, you can see the quadcopter icon on MP software. (add SS here)
+
+Now you are ready to fly UAV manually. Just turn on the RC tx ON and click on ARM button in MP. The rotors will start to rotate and according to given thrust, we can manage the UAV using different modes. We will see the flight modes in details.
