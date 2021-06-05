@@ -84,10 +84,10 @@ For this project, I have used Pixhawk 4 FCU.
 ## Overall Setup to Fly the UAV
 
 ### Hardware Setup
-    Connect Pixhawk FCU to LiPo battery. 
-    connect FCU to on board computer raspberry pi through USB Port of FCU. 
-    Connect realsense camera to raspberry pi 4.
-    Connect telemetry radio cable to PC. (Baud rate=57600)
+    -Connect Pixhawk FCU to LiPo battery. 
+    -Connect FCU to on board computer raspberry pi through USB Port of FCU. 
+    -Connect realsense camera to raspberry pi 4.
+    -Connect telemetry radio cable to PC. (Baud rate=57600)
     
     
 Before doing this, check the following parameters in Mission Planner Software: (Information regarding mission planner software and mandatory hardware configuration steps can available in Thesis Work -> Mission Planner directory)
@@ -129,4 +129,16 @@ We have to run three main nodes at the same time on 3 seperated terminal of RPi.
 
 on another terminal of RPi, run command "mavros echo /mavros/vision_pose/pose" to see the pose data from the vehicles (UAV).
 
-and also run the "mavros echo /tf" to see the camera pose in Apriltag frame with Z-axis pointing downwards.   
+and also run the "mavros echo /tf" to see the camera pose in Apriltag frame with Z-axis pointing downwards. /tf is basically transforms the pose of source_frame_id and target_frame_id which is defined in tf_to_mavros_rs.launch file.  
+
+The information regarding tf, vision_pose topic is available in "Thesis work-> vision_to_mavros" directory.
+
+
+## Check On Mission Planner Software
+
+After running the all the nodes (realsense camera node, mavros node, vision_to_mavros node), move to mission planner software and connect the battery. 
+
+I already mentioned above how to connect FCU to MP. After connecting to MP, You can see the pop-up screen on MP window that shows getting parameters. 
+
+Then 
+
