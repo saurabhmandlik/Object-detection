@@ -144,4 +144,4 @@ Then you have to set the EKF home position. It's shows the vehicle position in t
 
 After running the script, you can see the quadcopter icon on MP software. (add SS here)
 
-Now you are ready to fly UAV manually. Just turn on the RC tx ON and click on ARM button in MP. The rotors will start to rotate and according to given thrust, we can manage the UAV using different modes. We will see the flight modes in details.
+Now you are ready to fly UAV manually. Keep UAV on AprilTag marker and turn on the RC tx ON and click on ARM button in MP. The rotors will start to rotate and according to given thrust, we can manage the UAV using different modes. We will see the flight modes in details.
